@@ -46,3 +46,27 @@ class Solution {
     }
 
 }
+
+class Solution {
+    public int maxSubArray(int[] nums) {
+        // int c_max = Integer.MIN_VALUE,max=Integer.MIN_VALUE;
+        int c_sum =nums[0] , max= nums[0],start=0,end=0;
+        for(int i=1;i<nums.length;i++){
+            c_sum+=nums[i];
+            if(nums[i]>c_sum){
+                c_sum=nums[i];
+                start=i;
+            }
+              // c_sum= Math.max(nums[i],c_sum);
+            if(c_sum>max){
+                max=c_sum;
+                end=i;
+            }
+             // max = Math.max(max,c_sum);
+       }
+    System.out.println(start);
+        System.out.println(end);
+        
+     return max;
+    }
+}
